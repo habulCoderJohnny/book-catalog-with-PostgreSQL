@@ -15,8 +15,13 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// basic routes  
 app.use('/api/v1', routes);
 
+// health check 
+app.get('/', (req, res) => { //root api
+  res.status(200).json({ message: 'Hello from earth server!✌️' });
+});
 
 //global error handler
 app.use(globalErrorHandler);
