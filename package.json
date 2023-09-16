@@ -1,5 +1,5 @@
 {
-  "name": "book-catalog-with-SQL",
+  "name": "book-catalog-with-postgresql",
   "version": "1.0.0",
   "description": "You have been assigned the task of building the backend for a Book Listing Application. The main focus of this Task is to implement CRUD operations, pagination and filtering using Prisma, Postgres and Express.",
   "main": "src/server.ts",

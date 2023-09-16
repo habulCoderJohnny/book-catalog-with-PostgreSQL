@@ -1,5 +1,5 @@
-# # Build a Book Catalog Backend
-### Live Link:
+# # Build a Book Catalog Backend with PostgreSQL & Prisma
+### Live Link: https://book-catalog-server-delta.vercel.app 
 
 ### Application Routes:
 

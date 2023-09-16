@@ -1,4 +1,4 @@
-# Build a Book Catalog Backend Task
+# Build a Book Catalog Backend Task with PostgreSQL & Prisma
 
 ### Task No: 08
 
