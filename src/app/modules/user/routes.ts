@@ -1,7 +1,12 @@
-import express from "express"
-import { UserControllers } from "./controllers"
-const router = express.Router()
+import { UserRole } from '@prisma/client';
+import express from 'express';
+import auth from '../../middlewares/auth';
+import { UserControllers } from './controllers';
+const router = express.Router();
 
-router.get("/", UserControllers.getAllUsers)
+router.get('/', auth(UserRole.ADMIN), UserControllers.getAllUsers);
+router.get('/:id', auth(UserRole.ADMIN), UserControllers.getUser);
+router.patch('/:id', auth(UserRole.ADMIN), UserControllers.updateUser);
+router.delete('/:id', auth(UserRole.ADMIN), UserControllers.deleteUser);
 
-export const UserRoutes = router
+export const UserRoutes = router;
