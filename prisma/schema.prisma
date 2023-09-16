@@ -71,7 +71,7 @@ model ReviewAndRating {
 
 model Order {
   id     String      @id @default(uuid())
-  status OrderStatus
+  status OrderStatus @default(PENDING)
   userId String
   user   User   @relation(fields: [userId], references: [id])
   createdAt    DateTime      @default(now())
