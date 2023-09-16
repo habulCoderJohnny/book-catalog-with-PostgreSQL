@@ -1,4 +1,3 @@
--- Active: 1694247346395@@127.0.0.1@5432@ebook_db
 -- CreateEnum
 CREATE TYPE "UserRole" AS ENUM ('ADMIN', 'CUSTOMER');
 
@@ -11,7 +10,7 @@ CREATE TABLE "users" (
     "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
-    "role" "UserRole" NOT NULL,
+    "role" "UserRole" NOT NULL DEFAULT 'CUSTOMER',
     "contactNo" TEXT NOT NULL,
     "address" TEXT NOT NULL,
     "profileImg" TEXT NOT NULL,
