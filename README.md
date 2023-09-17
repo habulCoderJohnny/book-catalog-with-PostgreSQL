@@ -1,27 +1,45 @@
 # # Build a Book Catalog Backend with PostgreSQL & Prisma
-### Live Link: https://book-catalog-server-delta.vercel.app 
+
+### Live Link: https://book-catalog-servers.vercel.app
 
 ### Application Routes:
 
-#### User
+#### Auth
 
 - api/v1/auth/signup (POST)
 - api/v1/auth/signin (POST)
+
+Signup Request body:
+
+```json
+{
+  "name": "Jhon Doe",
+  "email": "john@example.com",
+  "password": "john123",
+  "role": "ADMIN", // role should be upper-case
+  "contactNo": "1234567890",
+  "address": "Dhaka, Bangladesh",
+  "profileImg": "user.jpg"
+}
+```
+
+#### User
+
 - api/v1/users (GET)
-- api/v1/users/712ea23a-2c99-4736-bab8-7f13859b373e (Single GET) Include an id that is saved in your database
-- api/v1/users/712ea23a-2c99-4736-bab8-7f13859b373e (PATCH)
-- api/v1/users/712ea23a-2c99-4736-bab8-7f13859b373e (DELETE) Include an id that is saved in your database
+- api/v1/users/e0d9f6f9-9c64-41a6-9819-6e1d6a7d0bf7 (Single GET) Include an id that is saved in my database
+- api/v1/users/e0d9f6f9-9c64-41a6-9819-6e1d6a7d0bf7 (PATCH)
+- api/v1/users/e0d9f6f9-9c64-41a6-9819-6e1d6a7d0bf7 (DELETE) Include an id that is saved in my database
 - api/v1/profile (GET)
 
 #### Category
 
 - api/v1/categories/create-category (POST)
 - api/v1/categories (GET)
-- api/v1/categories/c9f75ba9-4444-495a-8539-def6055b8ad4 (Single GET) Include an id that is saved in your database
-- api/v1/categories/c9f75ba9-4444-495a-8539-def6055b8ad4 (PATCH)
-- api/v1/categories/c9f75ba9-4444-495a-8539-def6055b8ad4 (DELETE) Include an id that is saved in your database
+- api/v1/categories/f590d8b7-6a93-4cf5-a592-adf486e83f32 (Single GET) Include an id that is saved in my database
+- api/v1/categories/f590d8b7-6a93-4cf5-a592-adf486e83f32 (PATCH)
+- api/v1/categories/f590d8b7-6a93-4cf5-a592-adf486e83f32 (DELETE) Include an id that is saved in my database
 
-#### Books
+#### Book
 
 - api/v1/books/create-book (POST)
 - api/v1/books (GET)
@@ -37,3 +55,5 @@
 - api/v1/orders/:orderId (GET)
 
 #### Profile
+
+- api/v1/profile (Get)
