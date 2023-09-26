@@ -1,13 +1,13 @@
 import { Order, Prisma, UserRole } from '@prisma/client';
+import httpStatus from 'http-status';
+import { JwtPayload } from 'jsonwebtoken';
+import ApiError from '../../../errors/ApiError';
 import { paginationHelpers } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import prisma from '../../../shared/prisma';
 import { orderRelationalFields, orderRelationalFieldsMapper } from './constant';
 import { IOrderFilter, IOrderReqData, WhereConditionType } from './interface';
-import ApiError from '../../../errors/ApiError';
-import httpStatus from 'http-status';
-import { JwtPayload } from 'jsonwebtoken';
 
 const createOrder = async (
   userId: string,
@@ -96,7 +96,7 @@ const getAllOrders = async (
     ? { AND: andCondition }
     : {};
 
-  if (user?.role === UserRole.CUSTOMER) {
+  if (user?.role === UserRole.customer) {
     whereCondition.user = { id: user.userId };
   }
 
@@ -133,8 +133,8 @@ const getOrder = async (
 ): Promise<Order | null> => {
   const whereCondition: WhereConditionType = { id };
 
-  if (user?.role === UserRole.CUSTOMER) {
-    console.log(user)
+  if (user?.role === UserRole.customer) {
+    console.log(user);
     whereCondition.user = { id: user.userId };
   }
 

@@ -16,7 +16,7 @@ Signup Request body:
   "name": "Jhon Doe",
   "email": "john@example.com",
   "password": "john123",
-  "role": "ADMIN", // role should be upper-case
+  "role": "admin",
   "contactNo": "1234567890",
   "address": "Dhaka, Bangladesh",
   "profileImg": "user.jpg"
