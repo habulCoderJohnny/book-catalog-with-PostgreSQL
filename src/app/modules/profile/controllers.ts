@@ -12,7 +12,7 @@ const getUserProfile: RequestHandler = catchAsync(async (req, res) => {
     sendResponse<User | null>(res, {
         statusCode: httpStatus.OK,
         success: true,
-        message: "User profile fetched successfully",
+        message: "User profile retrieved successfully",
         data: result
     })
 })

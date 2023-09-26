@@ -55,7 +55,7 @@ const updateCategory: RequestHandler = catchAsync(async (req, res) => {
   sendResponse<Category>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Categorys updated successfully!',
+    message: 'Category updated successfully!',
     data: result,
   });
 });
@@ -67,7 +67,7 @@ const deleteCategory: RequestHandler = catchAsync(async (req, res) => {
   sendResponse<Category>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Categorys deleted successfully!',
+    message: 'Category deleted successfully!',
     data: result,
   });
 });
