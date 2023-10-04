@@ -5,9 +5,9 @@ CREATE TYPE "UserRole" AS ENUM ('admin', 'customer');
 -- CreateEnum
 
 CREATE TYPE "OrderStatus" AS ENUM (
-    'PENDING',
-    'SHIPPED',
-    'DELIVERED'
+    'pending',
+    'shipped',
+    'delivered'
 );
 
 -- CreateTable
@@ -73,7 +73,7 @@ CONSTRAINT "review_and_ratings_pkey" PRIMARY KEY ("id") );
 CREATE TABLE
     "orders" (
         "id" TEXT NOT NULL,
-        "status" "OrderStatus" NOT NULL DEFAULT 'PENDING',
+        "status" "OrderStatus" NOT NULL DEFAULT 'pending',
         "userId" TEXT NOT NULL,
         "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
         "updatedAt" TIMESTAMP(3) NOT NULL,

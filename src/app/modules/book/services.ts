@@ -1,18 +1,21 @@
-import { Prisma, Book } from '@prisma/client';
-import prisma from '../../../shared/prisma';
-import { IPaginationOptions } from '../../../interfaces/pagination';
-import { IBookFilter } from './interface';
+import { Book, Prisma } from '@prisma/client';
 import { paginationHelpers } from '../../../helpers/paginationHelper';
+import { IGenericResponse } from '../../../interfaces/common';
+import { IPaginationOptions } from '../../../interfaces/pagination';
+import prisma from '../../../shared/prisma';
 import {
-  bookSearchableFields,
   bookRelationalFields,
   bookRelationalFieldsMapper,
+  bookSearchableFields,
 } from './constant';
-import { IGenericResponse } from '../../../interfaces/common';
+import { IBookFilter } from './interface';
 
 const createBook = async (payload: Book): Promise<Book> => {
   const data = await prisma.book.create({
     data: payload,
+    include: {
+      category: true,
+    },
   });
 
   return data;
